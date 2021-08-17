@@ -79,14 +79,25 @@ const NavMenu = styled.div`
                 right: 0;
                 left: 0;
                 bottom: -6px;
+                opacity: 0;
+                transform: scaleX(0);
+                transform-origin: left center;
+                transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+            }
+        }
+
+        &:hover {
+            span:after {
+                transform: scaleX(1);
+                opacity: 1;
             }
         }
     }
 `
 
 const UserImg = styled.img`
-  width: 48px;
-  height:  45px;
+  width: 49px;
+  height:  46px;
   border-radius: 50%;
   cursor: pointer;
 `
