@@ -40,6 +40,7 @@ export default Movies;
 const Container = styled.div``
 
 const Content = styled.div`
+    
     // padding: 25px;
     display: grid;
     grid-gap: 25px;
@@ -47,6 +48,7 @@ const Content = styled.div`
 `
 
 const Wrap = styled.div`
+    margin: 0 auto;
     cursor: pointer;
     border-radius: 10px;
     overflow: hidden;
