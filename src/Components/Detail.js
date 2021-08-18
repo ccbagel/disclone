@@ -51,7 +51,7 @@ const Background = styled.div`
     bottom: 0;
     right: 0;
     z-index: -1;
-    opacity: 0.7;
+    opacity: 0.5;
 
     img {
         width: 100%;
@@ -65,7 +65,7 @@ const ImageTitle = styled.div`
     min-height: 150px;
     width: 35vw;
     min-width: 200px;
-    margin-top: 50px;
+    margin-top: 100px;
 
 
     img {
@@ -78,7 +78,7 @@ const ImageTitle = styled.div`
 const Controls = styled.div`
     display: flex;
     align-items: center;
-    margin: 30px 50px;
+    margin: 30px 120px;
 `
 
 const PlayButton = styled.button`
@@ -129,7 +129,7 @@ const GroupWatchButton = styled(AddButton)`
 `
 
 const Subtitle = styled.div`
-    margin: 0 50px;
+    margin: 0 120px;
     font-weight: bold;
     font-size: 14px;
     color: rgb(249, 249, 249);
@@ -139,7 +139,7 @@ const Subtitle = styled.div`
 `
 
 const Description = styled.div`
-    margin: 10px 50px; 
+    margin: 10px 120px; 
     width: 600px;
     color: rgb(249, 249, 249);
     font-size: 17px;
