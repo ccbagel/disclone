@@ -48,7 +48,7 @@ const Content = styled.div`
 `
 
 const Wrap = styled.div`
-    margin: 0 auto;
+    margin: 20px auto;
     cursor: pointer;
     border-radius: 10px;
     overflow: hidden;
