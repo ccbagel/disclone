@@ -18,7 +18,6 @@ function Detail() {
             if(doc.exists) {
                 //set movie info to state
                 setMovie(doc.data());
-                console.log("this is movies ",movie);
             } else {
                 //redirect to home
             }
@@ -29,36 +28,36 @@ function Detail() {
         <Container>
             {movie && (
                 <>
-                <Background>
-                    <img src={movie.backgroundImg} />
-                </Background>
-                <ImageTitle>
-                    <img src={movie.titleImg} />
-                </ImageTitle>
-                <Controls>
-                <PlayButton>
-                    <img src="/images/play-icon-black.png" />
-                    <span>PLAY</span>
-                </PlayButton>
-                <TrailerButton>
-                    <img src="/images/play-icon-white.png" />
-                    <span>TRAILER</span>
-                </TrailerButton>
-                <AddButton>
-                    <span>+</span>
-                </AddButton>
-                <GroupWatchButton>
-                    <img src="/images/group-icon.png"  alt="group watch"/>
-                </GroupWatchButton>
-                </Controls>
-                <Subtitle>
-                    {movie.subTitle}
-                </Subtitle>
-                <Description>
-                    {movie.description}
-                </Description>
-                </>
-            )}
+                    <Background>
+                        <img src={movie.backgroundImg} />
+                    </Background>
+                    <ImageTitle>
+                        <img src={movie.titleImg} />
+                    </ImageTitle>
+                    <Controls>
+                    <PlayButton>
+                        <img src="/images/play-icon-black.png" />
+                        <span>PLAY</span>
+                    </PlayButton>
+                    <TrailerButton>
+                        <img src="/images/play-icon-white.png" />
+                        <span>TRAILER</span>
+                    </TrailerButton>
+                    <AddButton>
+                        <span>+</span>
+                    </AddButton>
+                    <GroupWatchButton>
+                        <img src="/images/group-icon.png"  alt="group watch"/>
+                    </GroupWatchButton>
+                    </Controls>
+                    <Subtitle>
+                        {movie.subTitle}
+                    </Subtitle>
+                    <Description>
+                        {movie.description}
+                    </Description>
+                </> 
+            )} 
         </Container>
     )
 }
@@ -67,7 +66,7 @@ export default Detail;
 
 const Container = styled.div`
     //vh scrolls pg down 
-    min-height: calc(80vh - 70px);
+    min-height: calc(70vh - 70px);
     padding: 0 calc(3.5vw + 5px); 
     position: relative;
 `
@@ -89,12 +88,11 @@ const Background = styled.div`
 `
 
 const ImageTitle = styled.div`
-    height: 20vh;
+    height: 23vh;
     min-height: 170px;
     width: 35vw;
     min-width: 200px;
     margin-top: 60px;
-
 
     img {
         width: 100%;

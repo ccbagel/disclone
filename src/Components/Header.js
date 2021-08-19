@@ -1,10 +1,37 @@
 import React from 'react';
-import  styled from "styled-components";
+import styled from "styled-components";
+import {selectUserName, selectUserPhoto, setUserLogin} from "../features/users/userSlice";
+import {useSelector, useDispatch} from "react-redux"; 
+import {auth, provider} from "../firebase";
 
 function  Header() {
+    //dispatch for user info
+    const dispatch = useDispatch();
+    //get user info
+    const userName = useSelector(selectUserName);
+    const userPhoto = useSelector(selectUserPhoto);
+
+    //get user data from google auth
+    const signIn = () => {
+        auth.signInWithPopup(provider)
+            .then((result) => {
+                let user = result.user;
+                // set data in the store
+                dispatch(setUserLogin({
+                    name: 
+                }))
+            })
+    };
+
     return (
         <Nav>
             <Logo src="/images/logo.svg" />
+            {!userName ? 
+            <LoginContainer>
+                <Login onClick={signIn}>Login</Login>
+            </LoginContainer> :
+            
+          (<>
             <NavMenu>
                 <a>
                     <img src="/images/home-icon.svg" alt="homepage" />
@@ -32,7 +59,9 @@ function  Header() {
                 </a>
 
             </NavMenu>
-            <UserImg src="https://cdn.vox-cdn.com/thumbor/JBJzwCXmTJs0NgnFtSPm_f5SMyw=/0x0:2000x1000/1200x800/filters:focal(654x138:974x458)/cdn.vox-cdn.com/uploads/chorus_image/image/59408999/Thanos_MCU.0.jpg" alt="user-profile-image"/> 
+            <UserImg src="https://cdn.vox-cdn.com/thumbor/JBJzwCXmTJs0NgnFtSPm_f5SMyw=/0x0:2000x1000/1200x800/filters:focal(654x138:974x458)/cdn.vox-cdn.com/uploads/chorus_image/image/59408999/Thanos_MCU.0.jpg" alt="user-profile-image"/>
+            </>)
+            }
         </Nav>
     )
 }
@@ -101,4 +130,28 @@ const UserImg = styled.img`
   height:  46px;
   border-radius: 50%;
   cursor: pointer;
+`
+
+const LoginContainer = styled.div`
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+`
+
+const Login = styled.div`
+    border: 2px solid #f9f9f9;
+    padding: 8px 16px;
+    border-radius: 4px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #f9f9f9;
+        color: #000;
+        border-color: transparent;
+        transition: all 0.2s ease 0s;
+    }
 `
