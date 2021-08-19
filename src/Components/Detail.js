@@ -1,16 +1,41 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
+import {useParams} from "react-router-dom"; 
+import db from "../firebase";
 
 function Detail() {
+    //grab id from rrd path to show correct movie background
+    const {id} = useParams();
+    const [movie, setMovie] = useState({});
+
+    useEffect(() => {
+        //grab movie info from the db
+        db.collection("movies")
+        .doc(id)
+        .get()
+        .then((doc) => {
+            //check if doc exists
+            if(doc.exists) {
+                //set movie info to state
+                setMovie(doc.data());
+                console.log("this is movies ",movie);
+            } else {
+                //redirect to home
+            }
+        })
+    },[]);
+
     return (
         <Container>
-            <Background>
-                <img src="https://api.time.com/wp-content/uploads/2018/06/bo-rgb-s120_22a_cs_pub-pub16-318.jpg"  alt="background"/>
-            </Background>
-            <ImageTitle>
-                <img src="/images/bao.png" alt="movie logo"/>
-            </ImageTitle>
-            <Controls>
+            {movie && (
+                <>
+                <Background>
+                    <img src={movie.backgroundImg} />
+                </Background>
+                <ImageTitle>
+                    <img src={movie.titleImg} />
+                </ImageTitle>
+                <Controls>
                 <PlayButton>
                     <img src="/images/play-icon-black.png" />
                     <span>PLAY</span>
@@ -25,13 +50,15 @@ function Detail() {
                 <GroupWatchButton>
                     <img src="/images/group-icon.png"  alt="group watch"/>
                 </GroupWatchButton>
-            </Controls>
-            <Subtitle>
-                2018 - 7m - Family - Fantasy - Kids - Animation
-            </Subtitle>
-            <Description>
-                A Chinese mom who's sad when her grown son leaves home gets another chance at motherhood when one of her dumplings springs to life. But she finds that nothing stays cute and small forever.
-            </Description>
+                </Controls>
+                <Subtitle>
+                    {movie.subTitle}
+                </Subtitle>
+                <Description>
+                    {movie.description}
+                </Description>
+                </>
+            )}
         </Container>
     )
 }
@@ -39,8 +66,9 @@ function Detail() {
 export default Detail;
 
 const Container = styled.div`
-    min-height: calc(100vh - 70px);
-    padding: 0 calc(3.5vw + 5px);
+    //vh scrolls pg down 
+    min-height: calc(80vh - 70px);
+    padding: 0 calc(3.5vw + 5px); 
     position: relative;
 `
 
@@ -62,10 +90,10 @@ const Background = styled.div`
 
 const ImageTitle = styled.div`
     height: 20vh;
-    min-height: 150px;
+    min-height: 170px;
     width: 35vw;
     min-width: 200px;
-    margin-top: 100px;
+    margin-top: 60px;
 
 
     img {
@@ -79,6 +107,7 @@ const Controls = styled.div`
     display: flex;
     align-items: center;
     margin: 30px 120px;
+    box-sizing: border-box;
 `
 
 const PlayButton = styled.button`
