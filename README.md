@@ -1,44 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+In this project, I used React, Redux, and Firebase to create a Disney+ Clone as part of a tutorial project. The motivation behind this wasn't to just build a clone, but to understand how everything integrates and comes together. I've also taken it a step further and added proper responsiveness to the app and other slight modifications. The app doesn't play movies or have search functionality, but the goal here was to create a platform that can on-board users, authenticate them, hold global state, and fetch data from a database using react hooks. It's semi-functional on the frontend and fully functional on the backend. 
 
-## Available Scripts
+**Feel free to check out my source code 😄**
 
-In the project directory, you can run:
+***NOTE***: Currently patching bugs on medium - small sized screens. If you have a desktop/laptop it should work fine. I'll post screenshots of it below in the meantime 👇
 
-### `npm start`
+- Login Page
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![2021-08-19 23_19_48-Greenshot](https://user-images.githubusercontent.com/72423262/130184778-155c26b8-5b8c-4637-8079-a006f005d7e5.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Home Page
 
-### `npm test`
+![home-page](https://user-images.githubusercontent.com/72423262/130184991-f1bf6e27-028f-43bb-b14d-529b8299c313.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Movie Detail Page
 
-### `npm run build`
+![detail-page](https://user-images.githubusercontent.com/72423262/130185039-6fcd449b-361e-4433-869a-959366678016.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Google Auth Login
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![desktop-login](https://user-images.githubusercontent.com/72423262/130185086-2281b7e1-7d35-4ba3-be04-6f0462a9bb23.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
