@@ -62,7 +62,37 @@ function  Header() {
                 <LoginContainer>
                     <Login onClick={signIn}>Login</Login>
                 </LoginContainer> :
-            
+                (<>
+                    <NavMenu>
+                            <a>
+                                <img src="/images/home-icon.svg" alt="homepage" />
+                                <span>HOME</span>
+                            </a>
+                            <a>
+                                <img src="/images/search-icon.svg" alt="search" />
+                                <span>SEARCH</span>
+                            </a>
+                            <a>
+                                <img src="/images/watchlist-icon.svg" alt="watchlist" />
+                                <span>WATCHLIST</span>
+                            </a>
+                            <a>
+                                <img src="/images/original-icon.svg" alt="homepage" />
+                                <span>ORIGINALS</span>
+                            </a>
+                            <a> 
+                                <img src="/images/movie-icon.svg" alt="homepage" />
+                                <span>MOVIES</span>
+                            </a>
+                            <a>
+                                <img src="/images/series-icon.svg" alt="homepage" />
+                                <span>SERIES</span>
+                            </a>  
+                    </NavMenu>
+                    <UserImg onClick={signOut} src={userPhoto} />
+                </>)
+
+                /* RESIZING            
                 (<>
                     <NavMenu>
                         <>{window.innerWidth <= 920 && 
@@ -95,7 +125,7 @@ function  Header() {
                         }</>   
                     </NavMenu>
                     <UserImg onClick={signOut} src={userPhoto} />
-                </>)
+                </>) */
             }
         </Nav> 
     )
