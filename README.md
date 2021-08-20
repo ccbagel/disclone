@@ -1,3 +1,5 @@
+# Disney+ Clone in React, Redux, Firebase
+
 In this project, I used React, Redux, and Firebase to create a Disney+ Clone as part of a tutorial project. The motivation behind this wasn't to just build a clone, but to understand how everything integrates and comes together. I've also taken it a step further and added proper responsiveness to the app and other slight modifications. The app doesn't play movies or have search functionality, but the goal here was to create a platform that can on-board users, authenticate them, hold global state, and fetch data from a database using react hooks. It's semi-functional on the frontend and fully functional on the backend. 
 
 **Feel free to check out my source code 😄**
