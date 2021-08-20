@@ -1,15 +1,32 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from "styled-components";
-import {selectUserName, selectUserPhoto, setUserLogin} from "../features/users/userSlice";
+import {selectUserName, selectUserPhoto, setUserLogin, setSignout} from "../features/users/userSlice";
 import {useSelector, useDispatch} from "react-redux"; 
 import {auth, provider} from "../firebase";
+import {useHistory} from "react-router-dom";
 
 function  Header() {
     //dispatch for user info
     const dispatch = useDispatch();
+    //redirect user to login page when signed out
+    const history = useHistory();
     //get user info
     const userName = useSelector(selectUserName);
     const userPhoto = useSelector(selectUserPhoto);
+
+    //keep user state on refresh
+    useEffect(() => {
+        auth.onAuthStateChanged(async (user) => {
+            if(user) {
+                dispatch(setUserLogin({
+                    name: user.displayName,
+                    email: user.email,
+                    photo: user.photoURL
+                }))
+                history.push("/");
+            }
+        })
+    },[]);
 
     //get user data from google auth
     const signIn = () => {
@@ -18,10 +35,23 @@ function  Header() {
                 let user = result.user;
                 // set data in the store
                 dispatch(setUserLogin({
-                    name: 
+                    name: user.displayName,
+                    email: user.email,
+                    photo: user.photoURL
                 }))
+                history.push("/");
             })
     };
+
+        //get user data from google auth
+        const signOut = () => {
+            auth.signOut()
+                .then(() => {
+                    dispatch(setSignout());
+                    history.push("/login");
+                })
+
+        };
 
     return (
         <Nav>
@@ -59,7 +89,10 @@ function  Header() {
                 </a>
 
             </NavMenu>
-            <UserImg src="https://cdn.vox-cdn.com/thumbor/JBJzwCXmTJs0NgnFtSPm_f5SMyw=/0x0:2000x1000/1200x800/filters:focal(654x138:974x458)/cdn.vox-cdn.com/uploads/chorus_image/image/59408999/Thanos_MCU.0.jpg" alt="user-profile-image"/>
+            <UserImg 
+                onClick={signOut}
+                src={userPhoto}
+            />
             </>)
             }
         </Nav>
@@ -130,6 +163,13 @@ const UserImg = styled.img`
   height:  46px;
   border-radius: 50%;
   cursor: pointer;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    border: 2px solid;
+    border-color: #f9f9f9;
+  }
 `
 
 const LoginContainer = styled.div`

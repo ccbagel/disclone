@@ -1,12 +1,53 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
+import {selectUserName, selectUserPhoto, setUserLogin, setSignout} from "../features/users/userSlice";
+import {useSelector, useDispatch} from "react-redux"; 
+import {auth, provider} from "../firebase";
+import {useHistory} from "react-router-dom";
 
 function Login() {
+        //dispatch for user info
+        const dispatch = useDispatch();
+        //redirect user to login page when signed out
+        const history = useHistory();
+        //get user info
+        const userName = useSelector(selectUserName);
+        const userPhoto = useSelector(selectUserPhoto);
+    
+        //keep user state on refresh
+        useEffect(() => {
+            auth.onAuthStateChanged(async (user) => {
+                if(user) {
+                    dispatch(setUserLogin({
+                        name: user.displayName,
+                        email: user.email,
+                        photo: user.photoURL
+                    }))
+                    history.push("/");
+                }
+            })
+        },[]);
+    
+            //get user data from google auth
+    const signIn = () => {
+        auth.signInWithPopup(provider)
+            .then((result) => {
+                let user = result.user;
+                // set data in the store
+                dispatch(setUserLogin({
+                    name: user.displayName,
+                    email: user.email,
+                    photo: user.photoURL
+                }))
+                history.push("/");
+            })
+    };
+
     return (
         <Container>
             <CTA>
                 <CTALogoOne src="/images/cta-logo-one.svg" />
-                <SignupButton>SIGN UP NOW</SignupButton>
+                <SignupButton onClick={signIn}>SIGN UP NOW</SignupButton>
                 <SignupDescription>
                     Get Premium Access to Raya and the Last Dragon for an additional fee with a Disney+ subscription. As of 03/26/21, the price of Disney+ and The Disney Bundle will increase by $1. 
                 </SignupDescription>
