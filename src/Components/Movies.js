@@ -24,17 +24,23 @@ function Movies() {
 
 export default Movies;
 
-const Container = styled.div``
+const Container = styled.div`
+`
 
 const Content = styled.div`
-    // padding: 25px;
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    ${'' /* flex-basis: 100%; */}
+    justify-content: center;
+    align-items: center;
+
+}
 `
 
 const Wrap = styled.div`
-    margin: 20px auto;
+    margin: 20px 20px;
     cursor: pointer;
     border-radius: 10px;
     overflow: hidden;
@@ -43,7 +49,6 @@ const Wrap = styled.div`
     width:350px;
     height: 190px;
     transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-
 
     img {
         width: 100%;
@@ -56,5 +61,15 @@ const Wrap = styled.div`
         border-color: rgba(249, 249, 249, 0.8);
         box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px; 
     } 
+
+    @media (max-width: 1200px) {
+        width:323px;
+        height: 190px;
+    }
+
+    @media (max-width: 768px) {
+        width: 300px;
+        height: 190px;
+    }
 `
 

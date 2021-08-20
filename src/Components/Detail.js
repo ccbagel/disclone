@@ -69,6 +69,10 @@ const Container = styled.div`
     min-height: calc(70vh - 70px);
     padding: 0 calc(3.5vw + 5px); 
     position: relative;
+
+    @media (max-width: 800px) {
+        overflow: hidden;
+    }
 `
 
 const Background = styled.div`
@@ -85,6 +89,16 @@ const Background = styled.div`
         height: 100%;
         object-fit: cover;
     }
+
+    @media (max-width: 800px) {
+        img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+        }
+    }
+
 `
 
 const ImageTitle = styled.div`

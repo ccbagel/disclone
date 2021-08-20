@@ -53,51 +53,54 @@ function  Header() {
 
         };
 
+    // const innerwidth = window.innerWidth;
+
     return (
-        <Nav>
+       <Nav>
             <Logo src="/images/logo.svg" />
             {!userName ? 
-            <LoginContainer>
-                <Login onClick={signIn}>Login</Login>
-            </LoginContainer> :
+                <LoginContainer>
+                    <Login onClick={signIn}>Login</Login>
+                </LoginContainer> :
             
-          (<>
-            <NavMenu>
-                <a>
-                    <img src="/images/home-icon.svg" alt="homepage" />
-                    <span>HOME</span>
-                </a>
-                <a>
-                    <img src="/images/search-icon.svg" alt="search" />
-                    <span>SEARCH</span>
-                </a>
-                <a>
-                    <img src="/images/watchlist-icon.svg" alt="watchlist" />
-                    <span>WATCHLIST</span>
-                </a>
-                <a>
-                    <img src="/images/original-icon.svg" alt="homepage" />
-                    <span>ORIGINALS</span>
-                </a>
-                <a>
-                    <img src="/images/movie-icon.svg" alt="homepage" />
-                    <span>MOVIES</span>
-                </a>
-                <a>
-                    <img src="/images/series-icon.svg" alt="homepage" />
-                    <span>SERIES</span>
-                </a>
-
-            </NavMenu>
-            <UserImg 
-                onClick={signOut}
-                src={userPhoto}
-            />
-            </>)
+                (<>
+                    <NavMenu>
+                        <>{window.innerWidth <= 920 && 
+                        <>
+                            <a>
+                                <img src="/images/home-icon.svg" alt="homepage" />
+                                <span>HOME</span>
+                            </a>
+                            <a>
+                                <img src="/images/search-icon.svg" alt="search" />
+                                <span>SEARCH</span>
+                            </a>
+                            <a>
+                                <img src="/images/watchlist-icon.svg" alt="watchlist" />
+                                <span>WATCHLIST</span>
+                            </a>
+                            <a>
+                                <img src="/images/original-icon.svg" alt="homepage" />
+                                <span>ORIGINALS</span>
+                            </a>
+                            <a> 
+                                <img src="/images/movie-icon.svg" alt="homepage" />
+                                <span>MOVIES</span>
+                            </a>
+                            <a>
+                                <img src="/images/series-icon.svg" alt="homepage" />
+                                <span>SERIES</span>
+                            </a>
+                        </>
+                        }</>   
+                    </NavMenu>
+                    <UserImg onClick={signOut} src={userPhoto} />
+                </>)
             }
-        </Nav>
+        </Nav> 
     )
 }
+
 
 export default Header;
 
@@ -195,3 +198,72 @@ const Login = styled.div`
         transition: all 0.2s ease 0s;
     }
 `
+
+
+                /* <a>
+                    <img src="/images/home-icon.svg" alt="homepage" />
+                    <span>HOME</span>
+                </a>
+                <a>
+                    <img src="/images/search-icon.svg" alt="search" />
+                    <span>SEARCH</span>
+                </a>
+                <a>
+                    <img src="/images/watchlist-icon.svg" alt="watchlist" />
+                    <span>WATCHLIST</span>
+                </a>
+                <a>
+                    <img src="/images/original-icon.svg" alt="homepage" />
+                    <span>ORIGINALS</span>
+                </a>
+                <a>
+                    <img src="/images/movie-icon.svg" alt="homepage" />
+                    <span>MOVIES</span>
+                </a>
+                <a>
+                    <img src="/images/series-icon.svg" alt="homepage" />
+                    <span>SERIES</span>
+                </a>  */
+
+/* 
+             <Nav>
+                <Logo src="/images/logo.svg" />
+                {!userName ? 
+                <LoginContainer>
+                    <Login onClick={signIn}>Login</Login>
+                </LoginContainer> :
+                
+           (<>
+             <NavMenu>
+                 <a>
+                     <img src="/images/home-icon.svg" alt="homepage" />
+                     <span>HOME</span>
+                 </a>
+                 <a>
+                     <img src="/images/search-icon.svg" alt="search" />
+                     <span>SEARCH</span>
+                 </a>
+                 <a>
+                     <img src="/images/watchlist-icon.svg" alt="watchlist" />
+                     <span>WATCHLIST</span>
+                 </a>
+                 <a>
+                     <img src="/images/original-icon.svg" alt="homepage" />
+                     <span>ORIGINALS</span>
+                 </a>
+                 <a> 
+                     <img src="/images/movie-icon.svg" alt="homepage" />
+                     <span>MOVIES</span>
+                 </a>
+                 <a>
+                     <img src="/images/series-icon.svg" alt="homepage" />
+                     <span>SERIES</span>
+                 </a>
+                </NavMenu>
+                    <UserImg 
+                        onClick={signOut}
+                        src={userPhoto}
+                    />
+                </>)
+                }
+            </Nav> */
