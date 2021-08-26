@@ -69,6 +69,7 @@ const Container = styled.div`
     min-height: calc(70vh - 70px);
     padding: 0 calc(3.5vw + 5px); 
     position: relative;
+    box-sizing: border-box;
 
     @media (max-width: 768px) {
         overflow: hidden;
