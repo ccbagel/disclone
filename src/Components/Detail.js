@@ -158,8 +158,8 @@ const PlayButton = styled.button`
     @media (max-width: 768px) {
         font-size: 12px;
         margin: 5px auto;
-        padding: 18px;
-        align-items: center;
+        ${'' /* padding: 18px;
+        align-items: center; */}
     }
 ` 
 
@@ -172,8 +172,8 @@ const TrailerButton = styled(PlayButton)`
     @media (max-width: 768px) {
         font-size: 12px;
         margin: 5px auto;
-        padding: 10px;
-        align-items: center;
+        ${'' /* padding: 10px;
+        align-items: center; */}
     }
 `
 
@@ -197,8 +197,8 @@ const AddButton = styled.button`
     @media (max-width: 768px) {
         font-size: 12px;
         margin: 5px auto;
-        padding: 10px;
-        align-items: center;
+        ${'' /* padding: 10px;
+        align-items: center; */}
     }
 `
 
