@@ -1,12 +1,12 @@
 # Disney+ Clone in React, Redux, Firebase
 
-In this project, I used React, Redux, and Firebase to create a Disney+ Clone as part of a tutorial project. The motivation behind this wasn't to just build a clone, but to understand how everything integrates and comes together. I've also taken it a step further and added proper responsiveness to the app and other slight modifications. The app doesn't play movies or have search functionality, but the goal here was to create a platform that can on-board users, authenticate them, hold global state, and fetch data from a database using react hooks. It's semi-functional on the frontend and fully functional on the backend.
+In this project, I used React, Redux, and Firebase to create a Disney+ Clone as part of a tutorial project. The motivation behind this wasn't to just build a clone, but to understand how everything integrates and works together. I've also taken it a step further and added proper responsiveness to the app and other slight modifications. The app doesn't play movies or have search functionality, but the goal here was to create a platform that can on-board users, authenticate them, hold global state, and fetch data from a database using Firebase, Redux, and React hooks. It's semi-functional on the frontend and fully functional on the backend.
 
 Check it out here: [Works best on large screens, patching for smaller screens](https://disneyclone.vercel.app/)
 
 **Feel free to check out my source code 😄**
 
-***NOTE***: Currently patching bugs on medium - small sized screens. If you have a desktop/laptop it should work fine. I'll post screenshots of it below in the meantime 👇
+***NOTE***: Currently patching small bugs. I'll also post screenshots below 👇
 
 - Login Page
 
