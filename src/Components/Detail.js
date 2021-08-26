@@ -98,7 +98,6 @@ const Background = styled.div`
         overflow: hidden;
         opacity: 0.6;
         }
-        margin-bottom: 150px;
     }
 
 `
