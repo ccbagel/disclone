@@ -93,10 +93,11 @@ const Background = styled.div`
 
     @media (max-width: 768px) {
         img {
-        width: 100%;
-        object-fit: cover;
-        overflow: hidden;
-        opacity: 0.6;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            overflow: hidden;
+            opacity: 0.6;
         }
     }
 
