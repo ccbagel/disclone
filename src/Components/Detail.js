@@ -73,7 +73,6 @@ const Container = styled.div`
     @media (max-width: 768px) {
         overflow: hidden;
         margin-top: 50px;
-        margin-bottom: 250px;
     }
 `
 
@@ -95,10 +94,11 @@ const Background = styled.div`
     @media (max-width: 768px) {
         img {
         width: 100%;
-        height: 100%;
+        min-height: calc(70vh - 100vh);
         object-fit: cover;
         overflow: hidden;
         opacity: 0.6;
+        margin-bottom: 250px;
         }
     }
 
@@ -158,8 +158,6 @@ const PlayButton = styled.button`
     @media (max-width: 768px) {
         font-size: 12px;
         margin: 5px auto;
-        ${'' /* padding: 18px;
-        align-items: center; */}
     }
 ` 
 
@@ -172,8 +170,6 @@ const TrailerButton = styled(PlayButton)`
     @media (max-width: 768px) {
         font-size: 12px;
         margin: 5px auto;
-        ${'' /* padding: 10px;
-        align-items: center; */}
     }
 `
 
@@ -197,8 +193,6 @@ const AddButton = styled.button`
     @media (max-width: 768px) {
         font-size: 12px;
         margin: 5px auto;
-        ${'' /* padding: 10px;
-        align-items: center; */}
     }
 `
 
