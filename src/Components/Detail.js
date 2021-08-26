@@ -159,6 +159,7 @@ const PlayButton = styled.button`
         font-size: 12px;
         margin: 5px auto;
         padding: 18px;
+        align-items: center;
     }
 ` 
 
@@ -172,6 +173,7 @@ const TrailerButton = styled(PlayButton)`
         font-size: 12px;
         margin: 5px auto;
         padding: 10px;
+        align-items: center;
     }
 `
 
@@ -196,6 +198,7 @@ const AddButton = styled.button`
         font-size: 12px;
         margin: 5px auto;
         padding: 10px;
+        align-items: center;
     }
 `
 
