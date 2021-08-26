@@ -70,9 +70,10 @@ const Container = styled.div`
     padding: 0 calc(3.5vw + 5px); 
     position: relative;
 
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
         overflow: hidden;
         margin-top: 50px;
+        margin-bottom: 250px;
     }
 `
 
@@ -91,7 +92,7 @@ const Background = styled.div`
         object-fit: cover;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
         img {
         width: 100%;
         height: 100%;
@@ -116,7 +117,7 @@ const ImageTitle = styled.div`
         object-fit: contain;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
         margin: 0 auto;
     }
 `
@@ -127,7 +128,7 @@ const Controls = styled.div`
     margin: 30px 120px;
     box-sizing: border-box;
 
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
         margin: 50px auto;
         display: flex;
         flex-direction: row;
@@ -153,6 +154,12 @@ const PlayButton = styled.button`
     &:hover {
         background: rgb(198, 198, 198);
     }
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+        margin: 5px auto;
+        padding: 18px;
+    }
 ` 
 
 const TrailerButton = styled(PlayButton)`
@@ -160,6 +167,12 @@ const TrailerButton = styled(PlayButton)`
     background: rgba(0, 0, 0, 0.3);
     color: rgb(249, 249, 249);
     border: 1px solid rgb(249, 249, 249);
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+        margin: 5px auto;
+        padding: 10px;
+    }
 `
 
 const AddButton = styled.button`
@@ -179,15 +192,17 @@ const AddButton = styled.button`
         color: rgb(249, 249, 249);
     }
 
-    @media (max-width: 800px) {
-        margin: 0;
+    @media (max-width: 768px) {
+        font-size: 12px;
+        margin: 5px auto;
+        padding: 10px;
     }
 `
 
 const GroupWatchButton = styled(AddButton)`
     background: rgb(0, 0, 0);
 
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
         display: none;
     }
 `
@@ -216,7 +231,7 @@ const Description = styled.div`
     font-size: 17px;
     margin-top: 16px;
 
-    @media (max-width: 800px) {
+    @media (max-width: 780px) {
         text-align: left;
         width: 100%;
         margin: 20px auto;
