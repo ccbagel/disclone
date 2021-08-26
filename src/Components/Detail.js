@@ -94,11 +94,10 @@ const Background = styled.div`
     @media (max-width: 768px) {
         img {
         width: 100%;
-        min-height: calc(70vh - 100vh);
         object-fit: cover;
         overflow: hidden;
         opacity: 0.6;
-        margin-bottom: 250px;
+        margin-bottom: 100px;
         }
     }
 
