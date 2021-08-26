@@ -4,12 +4,13 @@ import {selectUserName, selectUserPhoto, setUserLogin, setSignout} from "../feat
 import {useSelector, useDispatch} from "react-redux"; 
 import {auth, provider} from "../firebase";
 import {useHistory} from "react-router-dom";
+import NavMenu from "./Navbar";
 
 function  Header() {
     //dispatch for user info
     const dispatch = useDispatch();
     //redirect user to login page when signed out
-    const history = useHistory();
+    const history = useHistory("/");
     //get user info
     const userName = useSelector(selectUserName);
     const userPhoto = useSelector(selectUserPhoto);
@@ -23,7 +24,7 @@ function  Header() {
                     email: user.email,
                     photo: user.photoURL
                 }))
-                history.push("/");
+                history.push();
             }
         })
     },[]);
@@ -53,81 +54,27 @@ function  Header() {
 
         };
 
-    // const innerwidth = window.innerWidth;
+    const innerwidth = window.innerWidth;
 
     return (
-       <Nav>
-            <Logo src="/images/logo.svg" />
-            {!userName ? 
-                <LoginContainer>
-                    <Login onClick={signIn}>Login</Login>
-                </LoginContainer> :
-                (<>
-                    <NavMenu>
-                            <a>
-                                <img src="/images/home-icon.svg" alt="homepage" />
-                                <span>HOME</span>
-                            </a>
-                            <a>
-                                <img src="/images/search-icon.svg" alt="search" />
-                                <span>SEARCH</span>
-                            </a>
-                            <a>
-                                <img src="/images/watchlist-icon.svg" alt="watchlist" />
-                                <span>WATCHLIST</span>
-                            </a>
-                            <a>
-                                <img src="/images/original-icon.svg" alt="homepage" />
-                                <span>ORIGINALS</span>
-                            </a>
-                            <a> 
-                                <img src="/images/movie-icon.svg" alt="homepage" />
-                                <span>MOVIES</span>
-                            </a>
-                            <a>
-                                <img src="/images/series-icon.svg" alt="homepage" />
-                                <span>SERIES</span>
-                            </a>  
-                    </NavMenu>
+        <>
+            {
+                //if user isn't signed in, show logo and login
+                !userName ? 
+                <Nav>
+                    <Logo src="/images/logo.svg" />
+                    <LoginContainer>
+                        <Login onClick={signIn}>Login</Login>
+                    </LoginContainer>
+                </Nav> 
+                : <Nav>
+                    <Logo src="/images/logo.svg" />
+                    {innerwidth > 920 && <NavMenu />}
                     <UserImg onClick={signOut} src={userPhoto} />
-                </>)
+                </Nav>
 
-                /* RESIZING            
-                (<>
-                    <NavMenu>
-                        <>{window.innerWidth <= 920 && 
-                        <>
-                            <a>
-                                <img src="/images/home-icon.svg" alt="homepage" />
-                                <span>HOME</span>
-                            </a>
-                            <a>
-                                <img src="/images/search-icon.svg" alt="search" />
-                                <span>SEARCH</span>
-                            </a>
-                            <a>
-                                <img src="/images/watchlist-icon.svg" alt="watchlist" />
-                                <span>WATCHLIST</span>
-                            </a>
-                            <a>
-                                <img src="/images/original-icon.svg" alt="homepage" />
-                                <span>ORIGINALS</span>
-                            </a>
-                            <a> 
-                                <img src="/images/movie-icon.svg" alt="homepage" />
-                                <span>MOVIES</span>
-                            </a>
-                            <a>
-                                <img src="/images/series-icon.svg" alt="homepage" />
-                                <span>SERIES</span>
-                            </a>
-                        </>
-                        }</>   
-                    </NavMenu>
-                    <UserImg onClick={signOut} src={userPhoto} />
-                </>) */
             }
-        </Nav> 
+        </>
     )
 }
 
@@ -141,54 +88,13 @@ const Nav = styled.nav`
     align-items: center;
     padding: 0 36px;
     overflow-x: hidden;
+
+    @media (max-width: 920px) {
+        justify-content: space-between;
+    }
 `
 const Logo = styled.img`
     width: 80px;
-`
-const NavMenu = styled.div`
-    display: flex;
-    flex: 1;
-    margin-left: 60px;
-    align-items: center;
-
-    a {
-        display: flex;
-        align-items: center;
-        padding: 0 12px;
-        cursor: pointer;
-
-        img {
-             height: 20px;
-        }
-
-        span {
-            font-size: 13px;
-            letter-spacing: 1.42px;
-            margin: 0 5px;
-            position: relative;
-
-            &:after {
-                content: "";
-                height: 2px;
-                background: white;
-                position: absolute; 
-                right: 0;
-                left: 0;
-                bottom: -6px;
-                opacity: 0;
-                transform: scaleX(0);
-                transform-origin: left center;
-                transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-            }
-        }
-
-        &:hover {
-            span:after {
-                transform: scaleX(1);
-                opacity: 1;
-            }
-        }
-    }
 `
 
 const UserImg = styled.img`
@@ -228,72 +134,3 @@ const Login = styled.div`
         transition: all 0.2s ease 0s;
     }
 `
-
-
-                /* <a>
-                    <img src="/images/home-icon.svg" alt="homepage" />
-                    <span>HOME</span>
-                </a>
-                <a>
-                    <img src="/images/search-icon.svg" alt="search" />
-                    <span>SEARCH</span>
-                </a>
-                <a>
-                    <img src="/images/watchlist-icon.svg" alt="watchlist" />
-                    <span>WATCHLIST</span>
-                </a>
-                <a>
-                    <img src="/images/original-icon.svg" alt="homepage" />
-                    <span>ORIGINALS</span>
-                </a>
-                <a>
-                    <img src="/images/movie-icon.svg" alt="homepage" />
-                    <span>MOVIES</span>
-                </a>
-                <a>
-                    <img src="/images/series-icon.svg" alt="homepage" />
-                    <span>SERIES</span>
-                </a>  */
-
-/* 
-             <Nav>
-                <Logo src="/images/logo.svg" />
-                {!userName ? 
-                <LoginContainer>
-                    <Login onClick={signIn}>Login</Login>
-                </LoginContainer> :
-                
-           (<>
-             <NavMenu>
-                 <a>
-                     <img src="/images/home-icon.svg" alt="homepage" />
-                     <span>HOME</span>
-                 </a>
-                 <a>
-                     <img src="/images/search-icon.svg" alt="search" />
-                     <span>SEARCH</span>
-                 </a>
-                 <a>
-                     <img src="/images/watchlist-icon.svg" alt="watchlist" />
-                     <span>WATCHLIST</span>
-                 </a>
-                 <a>
-                     <img src="/images/original-icon.svg" alt="homepage" />
-                     <span>ORIGINALS</span>
-                 </a>
-                 <a> 
-                     <img src="/images/movie-icon.svg" alt="homepage" />
-                     <span>MOVIES</span>
-                 </a>
-                 <a>
-                     <img src="/images/series-icon.svg" alt="homepage" />
-                     <span>SERIES</span>
-                 </a>
-                </NavMenu>
-                    <UserImg 
-                        onClick={signOut}
-                        src={userPhoto}
-                    />
-                </>)
-                }
-            </Nav> */

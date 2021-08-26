@@ -19,6 +19,9 @@ function Viewers() {
             <Wrap>
                 <img src="/images/viewers-national.png" alt="disney-logo" />
             </Wrap>
+            <Wrap style={{height: 149}} >
+                <img src="/images/star.png" alt="disney-logo" />
+            </Wrap>
         </Container> 
         )
 }
@@ -29,22 +32,10 @@ const Container = styled.div`
     margin-top: 30px;
     padding: 30px 0 26px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    ${'' /* display: grid;
-    grid-gap: 25px;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) */}
-
-    ${'' /* @media (max-width: 1200px) {
-        width:323px;
-    }
-
-    @media (max-width: 768px) {
-        width: 300px;
-
-    } */}
-
 `
 
 const Wrap = styled.div`
@@ -70,11 +61,7 @@ const Wrap = styled.div`
         border-color: rgba(249, 249, 249, 0.8);
     }
 
-    ${'' /* @media (max-width: 768px) {
-        width: 600px;
+    @media (max-width: 920px) {
+        margin: 15px 0;
     } 
-
-    @media (max-width: 480px) {
-        width: 100px;
-    }  */}
-` 
+`

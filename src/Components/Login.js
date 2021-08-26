@@ -9,7 +9,7 @@ function Login() {
         //dispatch for user info
         const dispatch = useDispatch();
         //redirect user to login page when signed out
-        const history = useHistory();
+        const history = useHistory("/login");
         //get user info
         const userName = useSelector(selectUserName);
         const userPhoto = useSelector(selectUserPhoto);
