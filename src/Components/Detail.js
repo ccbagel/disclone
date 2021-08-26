@@ -97,7 +97,7 @@ const Background = styled.div`
         object-fit: cover;
         overflow: hidden;
         opacity: 0.6;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
         }
     }
 

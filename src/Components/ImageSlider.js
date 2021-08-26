@@ -50,6 +50,11 @@ const Carousel = styled(Slider)`
     button {
         z-index: 1;
     }
+
+    @media (max-width: 768px) {
+        width: 85vw;
+        margin: 10px auto;
+    }
 `
 
 const Wrap = styled.div`
@@ -66,5 +71,10 @@ const Wrap = styled.div`
         &:hover {
             border: 4px solid rgba(249, 249, 249, 0.8);
         }
+    }
+
+    @media (max-width: 768px) {
+        height: 150px;
+        object-fit: fit;
     }
 `
