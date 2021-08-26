@@ -72,6 +72,7 @@ const Container = styled.div`
 
     @media (max-width: 800px) {
         overflow: hidden;
+        margin-top: 50px;
     }
 `
 
@@ -96,6 +97,7 @@ const Background = styled.div`
         height: 100%;
         object-fit: cover;
         overflow: hidden;
+        opacity: 0.6;
         }
     }
 
@@ -113,6 +115,10 @@ const ImageTitle = styled.div`
         height: 100%;
         object-fit: contain;
     }
+
+    @media (max-width: 800px) {
+        margin: 0 auto;
+    }
 `
 
 const Controls = styled.div`
@@ -120,6 +126,15 @@ const Controls = styled.div`
     align-items: center;
     margin: 30px 120px;
     box-sizing: border-box;
+
+    @media (max-width: 800px) {
+        margin: 50px auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;    
+    }
 `
 
 const PlayButton = styled.button`
@@ -163,10 +178,18 @@ const AddButton = styled.button`
         font-size: 30px;
         color: rgb(249, 249, 249);
     }
+
+    @media (max-width: 800px) {
+        margin: 0;
+    }
 `
 
 const GroupWatchButton = styled(AddButton)`
     background: rgb(0, 0, 0);
+
+    @media (max-width: 800px) {
+        display: none;
+    }
 `
 
 const Subtitle = styled.div`
@@ -177,6 +200,13 @@ const Subtitle = styled.div`
     font-size: 15px;
     min-height: 20px;
     margin-top: 26px;
+
+    @media (max-width: 800px) {
+        text-align: left;
+        width: 100%;
+        margin-left: 0;
+        letter-spacing: 1px;
+    }
 `
 
 const Description = styled.div`
@@ -185,4 +215,13 @@ const Description = styled.div`
     color: rgb(249, 249, 249);
     font-size: 17px;
     margin-top: 16px;
+
+    @media (max-width: 800px) {
+        text-align: left;
+        width: 100%;
+        margin: 20px auto;
+        margin-left: 0;
+        letter-spacing: 1px;
+        line-height: 1.5;
+    }
 `
