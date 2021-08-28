@@ -144,6 +144,7 @@ const PlayButton = styled.button`
     font-size: 15px;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 46px;
     background: rgb(249, 249, 249);
     border: none;
@@ -165,6 +166,8 @@ const TrailerButton = styled(PlayButton)`
     background: rgba(0, 0, 0, 0.3);
     color: rgb(249, 249, 249);
     border: 1px solid rgb(249, 249, 249);
+    align-items: center;
+    justify-content: center;
 
     @media (max-width: 768px) {
         font-size: 12px;
