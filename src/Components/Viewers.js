@@ -18,10 +18,10 @@ function Viewers() {
             </Wrap>
             <Wrap>
                 <img src="/images/viewers-national.png" alt="disney-logo" />
-            </Wrap>
-            <Wrap style={{height: 149}} >
+            </Wrap> 
+             {/* <Wrap style={{height: 149}} >
                 <img src="/images/star.png" alt="disney-logo" />
-            </Wrap>
+            </Wrap> */}
         </Container> 
         )
 }
