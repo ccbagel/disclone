@@ -24,6 +24,8 @@ function Login() {
                         photo: user.photoURL
                     }))
                     history.push("/");
+                } else {
+                    history.push("/login");
                 }
             })
         },[]);
